@@ -13,8 +13,8 @@ const CollaborativeRoom = () => {
         <ClientSideSuspense fallback={<div>Loading…</div>}>
           <div className="collaborative-room">
           <Header>
-        <div className="flex w-fit items-center justify-center gap-2">
-          <p className="document-title">Share</p>
+             <div className="flex w-fit items-center justify-center gap-2">
+              <p className="document-title">Share</p>
 
         </div>
         <SignedOut>
