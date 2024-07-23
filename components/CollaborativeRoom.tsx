@@ -11,7 +11,7 @@ import { Input } from './ui/input'
 
 
 const CollaborativeRoom = ({ roomId, roomMetadata, users, currentUserType }: CollaborativeRoomProps) => {
-  const [documentTitle, setDocumentTitle] = useState(roomMetadata.title);
+  const [documentTitle, setDocumentTitle] = useState(roomMetadata?.title || 'Untitled');
   const [editing, setEditing] = useState(false);
   const [loading, setLoading] = useState(false);
 
