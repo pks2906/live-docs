@@ -8,6 +8,7 @@ import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
 import ActiveCollaborators from './ActiveCollaborators'
 import {  useRef, useState } from 'react';
 import { Input } from './ui/input'
+import Image from 'next/image';
 
 
 const CollaborativeRoom = ({ roomId, roomMetadata, users, currentUserType }: CollaborativeRoomProps) => {
@@ -17,6 +18,10 @@ const CollaborativeRoom = ({ roomId, roomMetadata, users, currentUserType }: Col
 
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLDivElement>(null);
+
+  const updateTitleHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+
+  }
   
   return (
     <RoomProvider id={roomId}>
@@ -26,6 +31,14 @@ const CollaborativeRoom = ({ roomId, roomMetadata, users, currentUserType }: Col
              <div ref={containerRef} className="flex w-fit items-center justify-center gap-2">
               {editing && !loading ? (
                 <Input
+                  type = "text"
+                  value={documentTitle}
+                  ref={inputRef}
+                  placeholder="Enter Title"
+                  onChange={(e) => setDocumentTitle(e.target.value)}
+                  onKeyDown={updateTitleHandler}
+                  disable={!editing}
+                  className="document-title-input"
                 
                 />
  
@@ -34,6 +47,24 @@ const CollaborativeRoom = ({ roomId, roomMetadata, users, currentUserType }: Col
                   <p className="document-title">{documentTitle}</p>
                 </>
               )}
+              
+
+              {currentUserType === 'editor' && !editing && (
+                <Image
+                  src="/assets/icons/edit.svg"
+                  alt="edit"
+                  width={24}
+                  height={24}
+                  onClick={() => setEditing(true)}
+                  className="pointer"
+        />
+      )}
+
+      {currentUserType !== 'editor' && !editing && (
+        <p className="view-only-tag">view only  </p>
+      )}
+
+      {loading && <p className="text-sm text-gray-400">saving...</p>}
 
         
         </div>
