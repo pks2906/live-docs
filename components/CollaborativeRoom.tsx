@@ -47,27 +47,24 @@ const CollaborativeRoom = ({ roomId, roomMetadata, users, currentUserType }: Col
                   <p className="document-title">{documentTitle}</p>
                 </>
               )}
-              
 
               {currentUserType === 'editor' && !editing && (
-                <Image
-                  src="/assets/icons/edit.svg"
-                  alt="edit"
-                  width={24}
-                  height={24}
-                  onClick={() => setEditing(true)}
-                  className="pointer"
-        />
-      )}
+                  <Image
+                    src="/assets/icons/edit.svg"
+                    alt="edit"
+                    width={24}
+                    height={24}
+                    onClick={() => setEditing(true)}
+                    className="pointer"
+                  />
+              )}
 
-      {currentUserType !== 'editor' && !editing && (
-        <p className="view-only-tag">view only  </p>
-      )}
+              {currentUserType !== 'editor' && !editing && (
+                <p className="view-only-tag" onClick={() => console.log(currentUserType)}>View only</p>
+              )}
 
-      {loading && <p className="text-sm text-gray-400">saving...</p>}
-
-        
-        </div>
+              {loading && <p className="text-sm text-gray-400">saving...</p>}
+            </div>
         <div className="flex w-full flex-1 justify-end gap-2 sm:gap-3">
           <ActiveCollaborators />
         <SignedOut>
