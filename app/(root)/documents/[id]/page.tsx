@@ -34,3 +34,5 @@ const Document = async ( { params: { id }}: SearchParamProps) => {
 }
 
 export default Document 
+
+//changes need to be done
