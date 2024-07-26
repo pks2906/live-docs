@@ -11,7 +11,7 @@ import { Input } from './ui/input'
 import Image from 'next/image';
 import { updateDocument } from '@/lib/actions/room.actions';
 
-
+//finding the issue 
 
 
 const CollaborativeRoom = ({ roomId, roomMetadata, users, currentUserType }: CollaborativeRoomProps) => {
