@@ -17,7 +17,8 @@ const Document = async ( { params: { id }}: SearchParamProps) => {
 
   if(!room) redirect('/');
 
-    // TODO: Assess the permissions of the user to access the document
+    // TODO: Assess the permissions of the user to access the document also there is some changes here
+    
 
 
   return (

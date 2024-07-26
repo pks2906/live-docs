@@ -14,6 +14,7 @@ import { updateDocument } from '@/lib/actions/room.actions';
 //finding the issue in this 
 
 
+
 const CollaborativeRoom = ({ roomId, roomMetadata, users, currentUserType }: CollaborativeRoomProps) => {
   const [documentTitle, setDocumentTitle] = useState(roomMetadata?.title || 'Untitled');
   const [editing, setEditing] = useState(false);
