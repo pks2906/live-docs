@@ -12,6 +12,7 @@ import Image from 'next/image';
 import { updateDocument } from '@/lib/actions/room.actions';
 
 //finding the issue in this 
+// not reflecting in frontend
 
 
 
